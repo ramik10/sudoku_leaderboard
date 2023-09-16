@@ -4,7 +4,7 @@ import { Winner } from "@/Db/schema";
 import NextCors from 'nextjs-cors';
 import { NextApiRequest, NextApiResponse} from "next";
 connect();
-export async function GET(req: NextApiRequest, res: NextApiResponse) {
+export async function handler(req: NextApiRequest, res: NextApiResponse) {
   await NextCors(req, res ,{
     // Options
     methods: ['GET', 'HEAD', 'PUT', 'PATCH', 'POST', 'DELETE'],
