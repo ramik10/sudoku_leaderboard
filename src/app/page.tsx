@@ -8,6 +8,7 @@ export default function Home() {
     useEffect(() => {
       setInterval(() => {
       fetch('/api/winners', {
+        method: 'POST',
         headers: {
           'Content-Type': 'application/json',
           'Accept': 'application/json'
