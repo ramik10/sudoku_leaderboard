@@ -7,7 +7,10 @@ const WinnerSchema = new Schema({
   image: String,
   email: {
     type:String,
-    unique:true}
+    unique:true},
+  moves: Number,
+  gameMode: String,
+  timeTaken: String
 });
 
 export const Winner = mongoose.models.winners || mongoose.model("winners", WinnerSchema)

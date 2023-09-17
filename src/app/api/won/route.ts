@@ -9,6 +9,9 @@ export async function POST(request: NextRequest) {
   const name = data.PlayerName;
   const image = data.PlayerImage;
   const email = data.PlayerEmail;
-  await Winner.create({name:name, image:image, email:email});
+  const moves = data.movesTaken;
+  const gameMode = data.gameModeName;
+  const timeTaken = data.timeTaken;
+  await Winner.create({name:name, image:image, email:email, moves:moves, gameMode: gameMode, timeTaken: timeTaken});
   return NextResponse.json({"success":"true"}, {status: 200});
 }
