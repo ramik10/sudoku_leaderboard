@@ -13,7 +13,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body >{children}</body>
+      <body style={{ backgroundColor:"#111827"}}>
+      <div style={{display:"flex", justifyContent:"center", backgroundColor:"#06b6d4"}}>
+      <h1 >Leaderboard</h1>
+      </div>
+      {children}
+      </body>
     </html>
   )
 }

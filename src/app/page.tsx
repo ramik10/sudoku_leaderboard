@@ -1,5 +1,6 @@
 "use client"
 import  { useEffect, useState } from 'react'
+import Button from '@mui/material/Button';
 
 export default function Home() {
   const [data, setData] = useState([])
@@ -20,24 +21,29 @@ export default function Home() {
        )
       }, 3000)
     }, [])
-  
+  let i = 0;
   return (
-    <div>
-      <h1>Leaderboard</h1>
+    <div style={{marginTop:"30px"}}>
         {data.map((w:any) => {
+          i++;
           return (
-            <Card key={w._id} name={w.name} image={w.image}/>
+            <Card key={w._id} name={w.name} image={w.image} timeTaken={w.timeTaken} gameMode={w.gameMode} moves={w.moves} number={i}/>
           )
         })}
     </div>
   )
 }
 
-function Card(props: {name: string, image: string, key: string}) {
+function Card(props: {name: string, image: string, key: string, moves: number, timeTaken: String, gameMode: string, number: number}) {
   return (
-    <div>
-      <h2>{props.name}</h2>
-      <img src={props.image}/>
+    <div style={{display:"flex", marginTop:"20px"}}>
+      <h1 style={{marginLeft:"10px", color:"white"}}>{props.number}.</h1>
+      <img style={{marginLeft:"10px", borderRadius:"50px", width:"4%"}} src={props.image}/>
+      <h2 style={{marginLeft:"10px", color:"white"}}>{props.name}</h2>
+      <Button variant="contained" sx={{height:"100%", marginLeft:"50px", borderRadius:"16px", backgroundColor:"#22d3ee", color:"black", marginTop:"20px"}}>{props.gameMode}</Button>
+      <Button variant="contained" sx={{height:"100%", marginLeft:"50px", borderRadius:"16px", backgroundColor:"#4b5563", color:"white", marginTop:"20px"}}>{props.moves}</Button>
+      
+      
     </div>
   )
 }
