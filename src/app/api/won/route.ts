@@ -11,7 +11,7 @@ export async function POST(request: NextRequest) {
   const email = data.PlayerEmail;
   const moves = data.movesTaken;
   const gameMode = data.gameModeName;
-  const timeTaken = data.timeTaken;
+  const timeTaken = data.time_taken;
   await Winner.create({name:name, image:image, email:email, moves:moves, gameMode: gameMode, timeTaken: timeTaken});
-  return NextResponse.json({"success":"true"}, {status: 200});
+  return NextResponse.json({ message: "ok"},{status: 200});
 }
