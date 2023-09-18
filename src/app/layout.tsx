@@ -1,4 +1,4 @@
-
+import "./globals.css"
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
@@ -13,9 +13,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body style={{ backgroundColor:"#111827"}}>
+      <body className="bg-[#111827]"/*style={{ backgroundColor:"#111827"}}*/>
       <div style={{display:"flex", justifyContent:"center", backgroundColor:"#06b6d4"}}>
-      <h1 >Leaderboard</h1>
+      <h1 className="h-20 font-extrabold text-4xl mt-7">Sudoku Leaderboard</h1>
       </div>
       {children}
       </body>
